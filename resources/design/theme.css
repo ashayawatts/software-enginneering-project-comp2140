@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Karmanjahni Company Limited — Global Design System Theme
+   Derived from the official Karmanjahni crest logo (Navy, Gold, Cream)
+   ========================================================================== */
+
+:root {
+  --kj-navy-primary: #0A165E;
+  --kj-navy-dark: #060D38;
+  --kj-gold-accent: #F2A922;
+  --kj-gold-trim: #C8A26A;
+  --kj-cream: #FFF8E7;
+
+  --kj-bg: #F4F6FA;
+  --kj-surface: #FFFFFF;
+  --kj-charcoal: #0B0E14;
+  --kj-text-dark: #0F172A;
+  --kj-text-muted: #475569;
+  --kj-border: #E2E8F0;
+
+  /* SRS Status Highlight Tokens */
+  --kj-delayed-text: #B91C1C;
+  --kj-delayed-bg: #FEE2E2;
+  --kj-delayed-border: #EF4444;
+
+  --kj-transit-text: #B45309;
+  --kj-transit-bg: #FEF3C7;
+
+  --kj-arrived-text: #15803D;
+  --kj-arrived-bg: #DCFCE7;
+
+  --kj-radius-card: 12px;
+  --kj-radius-btn: 8px;
+  --kj-touch-min: 44px;
+  --kj-shadow: 0 4px 16px rgba(10, 22, 94, 0.08);
+
+  --kj-font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+  --kj-font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--kj-font-body);
+  background-color: var(--kj-bg);
+  color: var(--kj-text-dark);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--kj-font-heading);
+  color: var(--kj-navy-primary);
+  margin-top: 0;
+}
+
+/* Top Brand Header */
+.kj-navbar {
+  background: linear-gradient(90deg, var(--kj-navy-dark), var(--kj-navy-primary));
+  border-bottom: 3px solid var(--kj-gold-accent);
+  color: var(--kj-cream);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.kj-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--kj-cream);
+}
+
+.kj-brand img {
+  height: 48px;
+  width: auto;
+  border-radius: 6px;
+  border: 1px solid var(--kj-gold-trim);
+}
+
+.kj-brand-title {
+  font-family: var(--kj-font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+.kj-brand-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--kj-gold-accent);
+}
+
+.kj-nav-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.kj-nav-links a {
+  color: var(--kj-cream);
+  text-decoration: none;
+  padding: 0.55rem 0.95rem;
+  min-height: var(--kj-touch-min);
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--kj-radius-btn);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.kj-nav-links a:hover,
+.kj-nav-links a.active {
+  background: rgba(242, 169, 34, 0.18);
+  color: var(--kj-gold-accent);
+}
+
+/* Layout Container & Cards */
+.kj-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.kj-card {
+  background: var(--kj-surface);
+  border: 1px solid var(--kj-border);
+  border-top: 3px solid var(--kj-navy-primary);
+  border-radius: var(--kj-radius-card);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--kj-shadow);
+  margin-bottom: 1.25rem;
+}
+
+/* Touch-Friendly Buttons & Inputs (F-03 Tablet Compliance) */
+.kj-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kj-touch-min);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--kj-radius-btn);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.kj-btn-primary {
+  background-color: var(--kj-navy-primary);
+  color: #FFFFFF;
+}
+
+.kj-btn-primary:hover {
+  background-color: var(--kj-navy-dark);
+}
+
+.kj-btn-gold {
+  background-color: var(--kj-gold-accent);
+  color: var(--kj-navy-dark);
+}
+
+.kj-input,
+.kj-select {
+  width: 100%;
+  min-height: var(--kj-touch-min);
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--kj-border);
+  border-radius: var(--kj-radius-btn);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.kj-input:focus,
+.kj-select:focus {
+  outline: none;
+  border-color: var(--kj-navy-primary);
+  box-shadow: 0 0 0 3px rgba(10, 22, 94, 0.14);
+}
+
+/* Shipment Status Badges (F-01 AC-2 Delayed Highlight) */
+.kj-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.badge-delayed {
+  background-color: var(--kj-delayed-bg);
+  color: var(--kj-delayed-text);
+  border: 1.5px solid var(--kj-delayed-border);
+}
+
+.badge-in-transit {
+  background-color: var(--kj-transit-bg);
+  color: var(--kj-transit-text);
+}
+
+.badge-arrived {
+  background-color: var(--kj-arrived-bg);
+  color: var(--kj-arrived-text);
+}
+
+/* Footer */
+.kj-footer {
+  background: var(--kj-charcoal);
+  color: #CBD5E1;
+  text-align: center;
+  padding: 1.25rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  border-top: 2px solid var(--kj-gold-trim);
+}
+
+.kj-footer a {
+  color: var(--kj-gold-accent);
+  text-decoration: none;
+}

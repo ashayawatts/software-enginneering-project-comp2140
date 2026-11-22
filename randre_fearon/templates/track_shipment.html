@@ -1,0 +1,17 @@
+{% extends "base_staff.html" %}
+{% block title %}Track Shipment (F-01) | Karmanjahni{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/randre/static/tracking.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>Shipment &amp; Inventory Tracking (F-01)</h1>
+  <p>Owner: <strong>Randre Fearon</strong> — Search by Bill of Lading (BoL) number.</p>
+  <!-- TODO (Randre): Build BoL search form, ETA display, and .badge-delayed highlight (AC-2) -->
+  <form method="get" action="/tracking/">
+    <input class="kj-input" type="text" name="bol" value="{{ bol }}" placeholder="Enter Bill of Lading (e.g. KJ-BOL-2026-001)">
+    <button class="kj-btn kj-btn-primary" type="submit" style="margin-top: 0.75rem;">Search Shipment</button>
+  </form>
+</section>
+{% endblock %}

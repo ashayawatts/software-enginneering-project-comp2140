@@ -1,0 +1,12 @@
+{% extends "base_public.html" %}
+{% block title %}{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }} | Karmanjahni{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/ashaya/static/storefront.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}</h1>
+  <!-- TODO (Ashaya): Show specs, estimated arrival timeline, and Tyrone's F-05 estimated JMD price -->
+</section>
+{% endblock %}

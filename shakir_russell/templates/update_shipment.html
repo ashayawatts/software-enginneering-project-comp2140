@@ -1,0 +1,17 @@
+{% extends "base_staff.html" %}
+{% block title %}Update Shipment Status &amp; ETA (F-06) | Karmanjahni{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/shakir/static/shipment_admin.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>Shipment Status &amp; ETA Updating (F-06)</h1>
+  <p>Owner: <strong>Shakir Russell</strong> — Authorized staff updates from supplier notices.</p>
+  <!-- TODO (Shakir): Build BoL lookup, status dropdown (In Transit/Delayed/Arrived), and ETA override form -->
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/shakir/static/eta_editor.js"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{
+  "brand": "Karmanjahni Company Limited",
+  "established": 2006,
+  "colors": {
+    "primaryNavy": "#0A165E",
+    "darkNavy": "#060D38",
+    "accentGold": "#F2A922",
+    "metallicGoldTrim": "#C8A26A",
+    "warmCream": "#FFF8E7",
+    "background": "#F4F6FA",
+    "surface": "#FFFFFF",
+    "darkCharcoal": "#0B0E14",
+    "textPrimary": "#0F172A",
+    "textMuted": "#475569",
+    "border": "#E2E8F0",
+    "status": {
+      "delayedText": "#B91C1C",
+      "delayedBg": "#FEE2E2",
+      "delayedBorder": "#EF4444",
+      "inTransitText": "#B45309",
+      "inTransitBg": "#FEF3C7",
+      "arrivedText": "#15803D",
+      "arrivedBg": "#DCFCE7"
+    }
+  },
+  "typography": {
+    "fontHeading": "'Montserrat', 'Segoe UI', sans-serif",
+    "fontBody": "'Inter', 'Segoe UI', system-ui, sans-serif",
+    "fontMono": "'JetBrains Mono', 'Consolas', monospace"
+  },
+  "breakpoints": {
+    "mobileMax": "767px",
+    "tabletMin": "768px",
+    "tabletMax": "1023px",
+    "desktopMin": "1024px"
+  },
+  "touch": {
+    "minTargetHeight": "44px",
+    "cardRadius": "12px",
+    "buttonRadius": "8px"
+  }
+}

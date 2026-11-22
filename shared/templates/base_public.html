@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Karmanjahni Company Limited | Quality Imported Vehicles{% endblock %}</title>
+  <link rel="stylesheet" href="/resources/design/theme.css">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <header class="kj-navbar">
+    <a href="/" class="kj-brand">
+      <img src="/resources/design/assets/karmanjahni-logo.jpg" alt="Karmanjahni Company Limited Logo">
+      <div>
+        <span class="kj-brand-title">KARMANJAHNI COMPANY LIMITED</span>
+        <span class="kj-brand-sub">Imported Vehicles &amp; Heavy Equipment &bull; Since 2006</span>
+      </div>
+    </a>
+    <nav class="kj-nav-links">
+      <a href="/">Browse Inventory</a>
+      <a href="/browse">Upcoming Arrivals</a>
+      <a href="/staff/login">Staff Login</a>
+    </nav>
+  </header>
+
+  <main class="kj-container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="kj-footer">
+    Karmanjahni Company Limited &bull; 1 Perth Avenue, Kingston, Jamaica &bull;
+    <a href="https://www.instagram.com/karmanjahni_ja/?hl=en" target="_blank" rel="noopener">Instagram @karmanjahni_ja</a> &bull;
+    <a href="https://www.findyello.com/jamaica/karmanjahni-co-ltd/profile/" target="_blank" rel="noopener">FindYello</a>
+  </footer>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

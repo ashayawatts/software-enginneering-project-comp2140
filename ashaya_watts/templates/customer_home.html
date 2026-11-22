@@ -1,0 +1,21 @@
+{% extends "base_public.html" %}
+{% block title %}Browse Vehicles | Karmanjahni Company Limited{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/ashaya/static/storefront.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>Find Your Next Vehicle</h1>
+  <p>Search available and upcoming imports from Japan, the US, Singapore, Thailand, and Europe.</p>
+  <form method="get" action="/browse">
+    <input class="kj-input" type="search" name="q" value="{{ query }}" placeholder="Search by make or model (e.g. Tacoma Pickup, Honda Fit)...">
+    <button class="kj-btn kj-btn-gold" type="submit" style="margin-top: 0.75rem;">Search Inventory</button>
+  </form>
+  <!-- TODO (Ashaya): Render public vehicle cards (estimated timelines & dynamic JMD price ONLY) -->
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/ashaya/static/search.js"></script>
+{% endblock %}

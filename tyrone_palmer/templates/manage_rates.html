@@ -1,0 +1,17 @@
+{% extends "base_staff.html" %}
+{% block title %}Manage FX &amp; Duty Rates (F-05) | Karmanjahni{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/tyrone/static/pricing.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>Dynamic Pricing Variables (F-05)</h1>
+  <p>Owner: <strong>Tyrone Palmer</strong> — Update exchange rates &amp; CC duty tiers without modifying code.</p>
+  <!-- TODO (Tyrone): Build editable tables for fx_rates and duty_tiers -->
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/tyrone/static/pricing_calc.js"></script>
+{% endblock %}

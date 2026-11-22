@@ -1,0 +1,16 @@
+{% extends "base_staff.html" %}
+{% block title %}Vehicle Profile (F-03) | Karmanjahni{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="/amanda/static/tablet.css">
+{% endblock %}
+
+{% block content %}
+<section class="kj-card">
+  <h1>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}</h1>
+  <!-- TODO (Amanda): Build swipeable photo gallery, mileage badge, color/features spec sheet -->
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/amanda/static/gallery.js"></script>
+{% endblock %}

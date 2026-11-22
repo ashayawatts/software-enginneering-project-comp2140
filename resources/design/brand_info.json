@@ -1,0 +1,26 @@
+{
+  "company_name": "Karmanjahni Company Limited",
+  "tagline": "Quality Imported Vehicles & Heavy Equipment — Since 2006",
+  "established_year": 2006,
+  "location": {
+    "address": "1 Perth Avenue, Kingston, Jamaica",
+    "city": "Kingston",
+    "country": "Jamaica"
+  },
+  "contact": {
+    "phones": ["+1 (876) 677-3116", "+1 (876) 356-6266"],
+    "instagram_handle": "@karmanjahni_ja",
+    "instagram_url": "https://www.instagram.com/karmanjahni_ja/?hl=en",
+    "findyello_url": "https://www.findyello.com/jamaica/karmanjahni-co-ltd/profile/"
+  },
+  "logo_path": "/resources/design/assets/karmanjahni-logo.jpg",
+  "placeholder_vehicle_path": "/resources/design/assets/placeholder-vehicle.svg",
+  "import_regions": ["Japan", "United States", "Singapore", "Thailand", "Europe"],
+  "inventory_categories": [
+    "Used Cars",
+    "Trucks & Pickups",
+    "Buses",
+    "Heavy Farm & Service Equipment",
+    "Parts"
+  ]
+}
