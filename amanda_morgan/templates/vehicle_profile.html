@@ -1,14 +1,85 @@
 {% extends "base_staff.html" %}
-{% block title %}Vehicle Profile (F-03) | Karmanjahni{% endblock %}
+{% block title %}{{ vehicle.title }} (F-03) | Karmanjahni{% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="/amanda/static/tablet.css">
 {% endblock %}
 
 {% block content %}
-<section class="kj-card">
-  <h1>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}</h1>
-  <!-- TODO (Amanda): Build swipeable photo gallery, mileage badge, color/features spec sheet -->
+<a class="kj-btn kj-btn-primary back-link" href="/tablet/">&larr; Back to vehicles</a>
+
+<section class="kj-card profile-header">
+  <div>
+    <h1>{{ vehicle.title }}</h1>
+    <p class="tablet-sub">{{ vehicle.color }} &middot; {{ vehicle.category }}</p>
+  </div>
+  <span class="mileage-badge mileage-badge-lg" id="mileage">{{ vehicle.mileage_display }}</span>
 </section>
+
+<div class="profile-layout">
+  <section class="kj-card gallery-card" aria-label="Photo gallery">
+    {% if vehicle.has_photos %}
+    <div class="gallery" id="gallery" data-count="{{ vehicle.photos|length }}">
+      <div class="gallery-track" id="gallery-track" tabindex="0">
+        {% for photo in vehicle.photos %}
+        <figure class="gallery-slide">
+          <img src="{{ photo }}" alt="{{ vehicle.title }} - photo {{ loop.index }}" loading="lazy">
+        </figure>
+        {% endfor %}
+      </div>
+      <button type="button" class="gallery-btn gallery-prev" id="gallery-prev" aria-label="Previous photo">&#8249;</button>
+      <button type="button" class="gallery-btn gallery-next" id="gallery-next" aria-label="Next photo">&#8250;</button>
+      <button type="button" class="gallery-btn gallery-expand" id="gallery-expand" aria-label="View photos full screen">&#10530;</button>
+      <p class="gallery-counter" id="gallery-counter" aria-live="polite">Photo 1 of {{ vehicle.photos|length }}</p>
+    </div>
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      {% for photo in vehicle.photos %}
+      <button type="button" class="gallery-thumb" data-index="{{ loop.index0 }}" aria-label="Show photo {{ loop.index }}">
+        <img src="{{ photo }}" alt="">
+      </button>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-photos" id="no-photos">
+      <p>No photos available</p>
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="kj-card specs-card">
+    <h2>Specifications</h2>
+    <dl class="spec-grid" id="specs">
+      <div><dt>Mileage</dt><dd>{{ vehicle.mileage_display }}</dd></div>
+      <div><dt>Colour</dt><dd>{{ vehicle.color }}</dd></div>
+      <div><dt>Year</dt><dd>{{ vehicle.year }}</dd></div>
+      <div><dt>Make</dt><dd>{{ vehicle.make }}</dd></div>
+      <div><dt>Model</dt><dd>{{ vehicle.model }}</dd></div>
+      <div><dt>Engine size</dt><dd>{{ vehicle.engine_display }}</dd></div>
+      <div><dt>Type</dt><dd>{{ vehicle.category }}</dd></div>
+      <div><dt>Imported from</dt><dd>{{ vehicle.origin_country }}</dd></div>
+    </dl>
+
+    {% if vehicle.features %}
+    <h3>Features</h3>
+    <ul class="feature-chips" id="features">
+      {% for feature in vehicle.features %}<li>{{ feature }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if vehicle.shipment_status %}
+    <h3>Shipment</h3>
+    <p id="shipment">
+      <span class="kj-badge {{ vehicle.status_class }}">{{ vehicle.shipment_status }}</span>
+      {% if vehicle.eta_display %}<span class="eta">ETA {{ vehicle.eta_display }}</span>{% endif %}
+    </p>
+    {% endif %}
+
+    {% if vehicle.estimated_price_display %}
+    <h3>Estimated price</h3>
+    <p class="price" id="estimated-price">{{ vehicle.estimated_price_display }}</p>
+    <p class="price-note">Estimate only. Final price depends on exchange rates and duty.</p>
+    {% endif %}
+  </section>
+</div>
 {% endblock %}
 
 {% block extra_js %}
